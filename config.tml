@@ -1,0 +1,8 @@
+[db]
+host = "mysql"
+username = "mysql"
+password = "mysql"
+db_name = "database"
+
+[routing]
+port = ":3001"
