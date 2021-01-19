@@ -7,5 +7,5 @@ import (
 
 // UserRepository はserviceのための定義ファイルです。
 type UserRepository interface {
-	FindById(db *gorm.DB, id int) (user domain.Users, err error)
+	FindByID(db *gorm.DB, id int) (user domain.Users, err error)
 }

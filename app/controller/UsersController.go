@@ -32,3 +32,10 @@ func (controller *UsersController) Get(c Context) {
 	}
 	c.JSON(statusCode, NewResponse("success", user))
 }
+
+// List は複数人分のユーザー情報を返却します。
+func (controller *UsersController) List(c Context) {
+	c.JSON(200, NewResponse("success", nil))
+}
+
+

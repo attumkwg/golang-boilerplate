@@ -13,7 +13,7 @@ type UserService struct {
 // Get はUserを取得します。
 func (service *UserService) Get(id int) (user domain.UsersForGet, statusCode int, err error) {
 	db := service.DB.Connect()
-	foundUser, err := service.User.FindById(db, id)
+	foundUser, err := service.User.FindByID(db, id)
 	if err != nil {
 		return domain.UsersForGet{}, 404, err
 	}

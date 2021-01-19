@@ -1,12 +1,23 @@
 version: '3'
 
+networks:
+  dc_nw:
+    driver: bridge
+
 services:
   api:
     build:
       context: .
     volumes:
-      - .:/Users/atsuhirotakahama/workspace/mplatmm
+      - .:/usr/local/mplatmm
     ports:
       - 3001:3001
+      - 2345:2345
+    security_opt:
+      - apparmor:unconfined
+    cap_add:
+      - SYS_PTRACE
+    networks:
+      - dc_nw
     tty:
       true

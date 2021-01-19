@@ -9,8 +9,8 @@ import (
 // UserRepository .
 type UserRepository struct {}
 
-// FindById .
-func (repo *UserRepository) FindById(db *gorm.DB, id int) (user domain.Users, err error) {
+// FindByID .
+func (repo *UserRepository) FindByID(db *gorm.DB, id int) (user domain.Users, err error) {
 	user = domain.Users{}
 	db.First(&user, id)
 	if user.Id <= 0 {
